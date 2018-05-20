@@ -1,7 +1,10 @@
 package com.aeyrial.metroidprimemod.util.handlers;
 
 import com.aeyrial.metroidprimemod.entity.EntityZoomer;
+import com.aeyrial.metroidprimemod.entity.EntityZoomerConcept;
 import com.aeyrial.metroidprimemod.entity.render.RenderZoomer;
+import com.aeyrial.metroidprimemod.entity.render.RenderZoomerConcept;
+
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.entity.Entity;
@@ -20,5 +23,16 @@ public class RenderHandler
 				return new RenderZoomer(manager);
 			}
 		});
+		
+		RenderingRegistry.registerEntityRenderingHandler(EntityZoomerConcept.class, new IRenderFactory<EntityZoomerConcept>()
+		{
+			@Override
+			public Render<? super EntityZoomerConcept> createRenderFor(RenderManager manager)
+			{
+				return new RenderZoomerConcept(manager);
+			}
+		});
 	}
+	
+	
 }
