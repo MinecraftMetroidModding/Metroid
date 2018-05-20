@@ -1,6 +1,7 @@
 package com.aeyrial.metroidprimemod.util.handlers;
 
 import com.aeyrial.metroidprimemod.init.ModBlocks;
+import com.aeyrial.metroidprimemod.init.ModEntities;
 import com.aeyrial.metroidprimemod.init.ModItems;
 import com.aeyrial.metroidprimemod.util.IHasModel;
 
@@ -10,6 +11,7 @@ import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 @EventBusSubscriber
 public class RegistryHandler
@@ -44,5 +46,11 @@ public class RegistryHandler
 				((IHasModel)block).registerModels();
 			}
 		}
+	}
+	
+	public static void preInitRegistries()
+	{
+		ModEntities.registerEntities();
+		RenderHandler.registerEntityRenders();
 	}
 }

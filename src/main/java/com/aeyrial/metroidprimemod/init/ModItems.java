@@ -34,7 +34,6 @@ public class ModItems
 	
 	// Find phazon sound clip for armour equipping		
 			
-			
 	//Items
 	public static final Item PHAZON_BLUE_ORE = new ItemBase("phazon_blue_ore");
 	

@@ -5,6 +5,7 @@ import com.aeyrial.metroidprimemod.init.ModCrafting;
 import com.aeyrial.metroidprimemod.init.ModItems;
 import com.aeyrial.metroidprimemod.proxy.CommonProxy;
 import com.aeyrial.metroidprimemod.util.Reference;
+import com.aeyrial.metroidprimemod.util.handlers.RegistryHandler;
 
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -25,7 +26,7 @@ public class Main
 	public static CommonProxy proxy;
 	
 	@EventHandler
-	public static void preInit(FMLPreInitializationEvent event){}
+	public static void preInit(FMLPreInitializationEvent event){RegistryHandler.preInitRegistries();}
 	
 	@EventHandler
 	public static void init(FMLInitializationEvent event){}
