@@ -1,6 +1,7 @@
 package com.aeyrial.metroidprimemod.entity;
 
 import com.aeyrial.metroidprimemod.init.ModItems;
+import com.aeyrial.metroidprimemod.util.handlers.LootTableHandler;
 
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -16,6 +17,7 @@ import net.minecraft.entity.passive.EntityCow;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 
@@ -56,6 +58,12 @@ public class EntityZoomerConcept extends EntityCow
 	public EntityCow createChild(EntityAgeable ageable)
 	{
 		return new EntityZoomerConcept(world);
+	}
+	
+	@Override
+	protected ResourceLocation getLootTable()
+	{
+		return LootTableHandler.ZOOMER_CONCEPT;
 	}
 	
 	@Override
