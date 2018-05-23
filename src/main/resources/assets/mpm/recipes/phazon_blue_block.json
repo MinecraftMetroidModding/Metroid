@@ -1,0 +1,25 @@
+{
+    "type": "minecraft:crafting_shaped",
+    
+    "pattern":
+    [
+        "OO",
+        "OO"
+    ],
+    
+    "key":
+    {
+        "O":
+        {
+            "item": "mpm:phazon_blue_ore"
+        }
+    
+    },
+    
+    "result":
+    {
+        "item": "mpm:phazon_blue_block",
+        "count": 1
+    }
+    
+}

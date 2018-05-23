@@ -1,5 +1,6 @@
 package com.aeyrial.metroidprimemod.entity;
 
+import com.aeyrial.metroidprimemod.entity.ai.EntityAICircleWander;
 import com.aeyrial.metroidprimemod.init.ModItems;
 import com.aeyrial.metroidprimemod.util.handlers.LootTableHandler;
 
@@ -29,6 +30,7 @@ public class EntityZoomerConcept extends EntityCow
 		this.setSize(0.8F, 0.4F); // Must correspond to the texture sizing
 	}
 	
+	
 	@Override
 	protected void initEntityAI()
 	{
@@ -37,8 +39,9 @@ public class EntityZoomerConcept extends EntityCow
         this.tasks.addTask(2, new EntityAIMate(this, 1.0D));
         this.tasks.addTask(3, new EntityAITempt(this, 1.25D, ModItems.PHAZON_BLUE_ORE, false)); // Replace with alternative later
         this.tasks.addTask(4, new EntityAIFollowParent(this, 1.25D));
-        this.tasks.addTask(5, new EntityAIWanderAvoidWater(this, 1.0D));
-        this.tasks.addTask(6, new EntityAILookIdle(this));
+        this.tasks.addTask(5, new EntityAICircleWander(this, 1.0D)); // Not implemented
+        //this.tasks.addTask(6, new EntityAILookIdle(this));
+		
 	}
 	
 	@Override
