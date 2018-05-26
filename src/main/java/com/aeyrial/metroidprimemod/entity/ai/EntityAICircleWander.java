@@ -4,13 +4,16 @@ import java.util.Random;
 
 import javax.annotation.Nullable;
 import net.minecraft.entity.EntityCreature;
+import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.ai.EntityAIBase;
 import net.minecraft.entity.ai.RandomPositionGenerator;
 import net.minecraft.util.math.Vec3d;
 
 public class EntityAICircleWander extends EntityAIBase
 {
-    protected final EntityCreature entity;
+    
+	// Movement Variables
+	protected final EntityCreature entity;
     protected double x;
     protected double y;
     protected double z;
@@ -19,7 +22,19 @@ public class EntityAICircleWander extends EntityAIBase
     protected boolean mustUpdate;
     protected Vec3d vec3d_2 = null;
     protected int wanderDir = 0;
-
+    
+    //Looking Variables
+    /** The amount of change that is made each update for an entity facing a direction. */
+    private float deltaLookYaw;
+    /** The amount of change that is made each update for an entity facing a direction. */
+    private float deltaLookPitch;
+    /** Whether or not the entity is trying to look at something. */
+    private boolean isLooking;
+    private double posX;
+    private double posY;
+    private double posZ;
+    
+    // Movement Functions
     public EntityAICircleWander(EntityCreature creatureIn, double speedIn)
     {
         this(creatureIn, speedIn, 120);
@@ -78,8 +93,10 @@ public class EntityAICircleWander extends EntityAIBase
     	wanderDir++;
     	if(wanderDir>=4){wanderDir = 0;}
     	
+    	int min = 3;
+    	int max = 10;
     	Random rand = new Random(); 
-    	int value = rand.nextInt(8); 
+    	int value = rand.nextInt((max - min) + 1) + min;
         	
     	if (vec3d_2  == null)
     	{
@@ -121,7 +138,11 @@ public class EntityAICircleWander extends EntityAIBase
      */
     public void startExecuting()
     {
-        this.entity.getLookHelper //.setLookPosition(this.x, this.y, this.z, this.speed);
+    	this.entity.getLookHelper().setLookPosition(this.x, this.y, this.z,
+    			(float)this.entity.getHorizontalFaceSpeed(),
+    			(float)this.entity.getVerticalFaceSpeed());
+    	
+    	//this.entity.setLookPosition(this.x, this.y, this.z, this.speed);
     	this.entity.getNavigator().tryMoveToXYZ(this.x, this.y, this.z, this.speed);
     }
 
