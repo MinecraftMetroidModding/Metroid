@@ -53,4 +53,9 @@ public class RegistryHandler
 		ModEntities.registerEntities();
 		RenderHandler.registerEntityRenders();
 	}
+	
+	public static void initRegistries()
+	{
+		SoundsHandler.registerSounds();
+	}
 }

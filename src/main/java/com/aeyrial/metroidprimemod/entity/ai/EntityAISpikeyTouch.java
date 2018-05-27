@@ -2,9 +2,12 @@ package com.aeyrial.metroidprimemod.entity.ai;
 
 import javax.annotation.Nullable;
 
+import com.aeyrial.metroidprimemod.util.handlers.SoundsHandler;
+import com.aeyrial.metroidprimemod.entity.EntityZoomerConcept;
 import com.google.common.base.Function;
 import com.google.common.base.Predicates;
 
+import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityCreature;
 import net.minecraft.entity.EntityLiving;
@@ -14,9 +17,13 @@ import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.passive.EntityCow;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.Entity;
+
 import net.minecraft.pathfinding.Path;
 import net.minecraft.util.EntitySelectors;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.SoundEvent;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
@@ -99,9 +106,12 @@ public class EntityAISpikeyTouch extends EntityAIBase
 	    public boolean shouldContinueExecuting()
 	    {
 	        EntityLivingBase entitylivingbase = this.attacker.getAttackTarget();
-	        // Force exit early to stop zoomer concept getting 'stuck'
 
 	        if (entitylivingbase != null)
+	        {
+	        	return false;
+	        }
+	        else if(entitylivingbase == null && true)
 	        {
 	        	return false;
 	        }
@@ -151,8 +161,10 @@ public class EntityAISpikeyTouch extends EntityAIBase
 	    {
 	        EntityLivingBase entitylivingbase = this.attacker.getAttackTarget();
 	        
-	        //if (entitylivingbase instanceof EntityPlayer && (((EntityPlayer)entitylivingbase).isSpectator() || ((EntityPlayer)entitylivingbase).isCreative()) || entitylivingbase instanceof EntityMob || entitylivingbase instanceof EntityAnimal)
-
+	        //;
+	        
+	        //if (entitylivingbase != null)
+	        
 	        if (entitylivingbase instanceof EntityPlayer && (((EntityPlayer)entitylivingbase).isSpectator() || ((EntityPlayer)entitylivingbase).isCreative()) || entitylivingbase instanceof EntityMob || entitylivingbase instanceof EntityAnimal)
 	        {
 	            this.attacker.setAttackTarget((EntityLivingBase)null);
@@ -231,8 +243,8 @@ public class EntityAISpikeyTouch extends EntityAIBase
 	        }*/
 
 	        this.attackTick = Math.max(this.attackTick - 1, 0);
-	        //this.checkAndPerformAttack(entitylivingbase, d0);
 	        this.checkAndPerformAttack(entitylivingbase, d0);
+	        entitylivingbase = null;
 	    }
 
 	    /*protected void checkAndPerformAttack(EntityLivingBase p_190102_1_, double p_190102_2_)
@@ -256,11 +268,11 @@ public class EntityAISpikeyTouch extends EntityAIBase
 	        {
 	            this.attackTick = 1;
 	            this.attacker.swingArm(EnumHand.MAIN_HAND);
-	            this.attacker.attackEntityAsMob(p_190102_1_); // ACTUAL ATTACK
+	            this.attacker.attackEntityAsMob(p_190102_1_);
 	        }
 	    }
 
-	    protected double getAttackReachSqr(EntityLivingBase attackTarget)
+		protected double getAttackReachSqr(EntityLivingBase attackTarget)
 	    {
 	    	if(attackTarget != null)
 	    	{
@@ -272,4 +284,9 @@ public class EntityAISpikeyTouch extends EntityAIBase
 	    	}
 	        
 	    }
+	    
+		/*private SoundEvent getAttackSound()
+		{
+			return SoundsHandler.ENTITY_ZOOMER_ATTACK;
+		}*/
 }

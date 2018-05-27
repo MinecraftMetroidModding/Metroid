@@ -1,0 +1,29 @@
+{
+    "entity.zoomer.ambient":
+    {
+        "category": "entity",
+        "subtitle": "entity.zoomer.ambient",
+        "sounds": [{ "name": "mpm:entity/zoomer/ambient", "stream": true}]
+    },
+    
+    "entity.zoomer.hurt":
+    {
+        "category": "entity",
+        "subtitle": "entity.zoomer.hurt",
+        "sounds": [{ "name": "mpm:entity/zoomer/hurt", "stream": true}]
+    },
+    
+    "entity.zoomer.death":
+    {
+        "category": "entity",
+        "subtitle": "entity.zoomer.death",
+        "sounds": [{ "name": "mpm:entity/zoomer/death", "stream": true}]
+    },
+    
+    "entity.zoomer.attack":
+    {
+        "category": "entity",
+        "subtitle": "entity.zoomer.attack",
+        "sounds": [{ "name": "mpm:entity/zoomer/attack", "stream": true}]
+    }
+}

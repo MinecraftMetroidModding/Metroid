@@ -141,8 +141,7 @@ public class EntityAICircleWander extends EntityAIBase
     	this.entity.getLookHelper().setLookPosition(this.x, this.y, this.z,
     			(float)this.entity.getHorizontalFaceSpeed(),
     			(float)this.entity.getVerticalFaceSpeed());
-    	
-    	//this.entity.setLookPosition(this.x, this.y, this.z, this.speed);
+
     	this.entity.getNavigator().tryMoveToXYZ(this.x, this.y, this.z, this.speed);
     }
 
