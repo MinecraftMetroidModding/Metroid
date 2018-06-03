@@ -83,7 +83,7 @@ public class EntityZoomerConcept extends EntityMob
 	{
         this.tasks.addTask(0, new EntityAISwimming(this));
         this.tasks.addTask(1, new EntityAIPanic(this, 2.0D));
-        this.tasks.addTask(2, new EntityAISpikeyTouch(this, 0.0D, false));
+        this.tasks.addTask(2, new EntityAISpikeyTouch(this, 0.0D, false,this.getAttackSound()));
         this.tasks.addTask(3, new EntityAITempt(this, 1.25D, ModItems.PHAZON_BLUE_ORE, false)); // Replace with alternative later
         this.tasks.addTask(4, new EntityAICircleWander(this, 1.0D));
         this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false, new Class[0]));

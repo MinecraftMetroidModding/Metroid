@@ -1,0 +1,220 @@
+package com.aeyrial.metroidprimemod.entity.model;
+
+import net.minecraft.client.model.ModelBase;
+import net.minecraft.client.model.ModelRenderer;
+import net.minecraft.entity.Entity;
+import net.minecraft.client.renderer.GlStateManager;
+import org.lwjgl.opengl.GL11;
+
+/**
+ * ModelCow - Either Mojang or a mod author
+ * Created using Tabula 7.0.0
+ */
+public class ModelWarWasp extends ModelBase {
+    public ModelRenderer Thorax;
+    public ModelRenderer Wing_Frame_Left;
+    public ModelRenderer Wing_Film_Left;
+    public ModelRenderer Basalspike;
+    public ModelRenderer Neck;
+    public ModelRenderer thoraxsub1;
+    public ModelRenderer thoraxsub2;
+    public ModelRenderer thoraxsub3;
+    public ModelRenderer thoraxsub4;
+    public ModelRenderer wingstubleft;
+    public ModelRenderer wingstubright;
+    public ModelRenderer thoraxsub5;
+    public ModelRenderer thoraxsub6;
+    public ModelRenderer Wing_Filmsub1;
+    public ModelRenderer BSsub1;
+    public ModelRenderer BSsub2;
+    public ModelRenderer BSsub3;
+    public ModelRenderer BSsub4;
+    public ModelRenderer Head;
+    public ModelRenderer headchin;
+    public ModelRenderer MiddleEye;
+    public ModelRenderer LeftEye;
+    public ModelRenderer RightEye;
+    public ModelRenderer RightRidge;
+    public ModelRenderer LeftRidge;
+    public ModelRenderer Wing_Frame_Right;
+    public ModelRenderer Wing_Film_Right;
+    public ModelRenderer Wing_Filmsub1_1;
+
+    public ModelWarWasp() {
+        this.textureWidth = 64;
+        this.textureHeight = 32;
+        this.thoraxsub4 = new ModelRenderer(this, 0, 0);
+        this.thoraxsub4.setRotationPoint(1.0F, 1.0F, 5.0F);
+        this.thoraxsub4.addBox(0.0F, 0.0F, 0.0F, 3, 3, 1, 0.0F);
+        this.Wing_Filmsub1 = new ModelRenderer(this, 0, 0);
+        this.Wing_Filmsub1.setRotationPoint(0.0F, 3.0F, 0.0F);
+        this.Wing_Filmsub1.addBox(0.0F, 0.0F, 0.0F, 10, 2, 1, 0.0F);
+        this.thoraxsub6 = new ModelRenderer(this, 0, 0);
+        this.thoraxsub6.setRotationPoint(1.5F, 7.0F, 1.5F);
+        this.thoraxsub6.addBox(0.0F, 0.0F, 0.0F, 2, 3, 2, 0.0F);
+        this.Wing_Film_Left = new ModelRenderer(this, 0, 0);
+        this.Wing_Film_Left.setRotationPoint(7.0F, 2.93F, 2.25F);
+        this.Wing_Film_Left.addBox(0.0F, 0.0F, 0.0F, 19, 3, 1, 0.0F);
+        this.setRotateAngle(Wing_Film_Left, 0.0F, 0.0F, -0.5235987755982988F);
+        this.thoraxsub5 = new ModelRenderer(this, 0, 0);
+        this.thoraxsub5.setRotationPoint(1.0F, 5.0F, 1.0F);
+        this.thoraxsub5.addBox(0.0F, 0.0F, 0.0F, 3, 2, 3, 0.0F);
+        this.RightEye = new ModelRenderer(this, 0, 0);
+        this.RightEye.setRotationPoint(1.75F, 1.5F, 2.0F);
+        this.RightEye.addBox(0.0F, 0.0F, 0.0F, 1, 1, 1, 0.0F);
+        this.setRotateAngle(RightEye, -0.7853981633974483F, 0.0F, 0.0F);
+        this.wingstubleft = new ModelRenderer(this, 0, 0);
+        this.wingstubleft.setRotationPoint(6.0F, 2.0F, 2.0F);
+        this.wingstubleft.addBox(0.0F, 0.0F, 0.0F, 1, 1, 1, 0.0F);
+        this.LeftRidge = new ModelRenderer(this, 0, 0);
+        this.LeftRidge.setRotationPoint(1.0F, 5.8F, 0.0F);
+        this.LeftRidge.addBox(0.0F, 0.0F, 0.0F, 2, 2, 2, 0.0F);
+        this.setRotateAngle(LeftRidge, 0.0F, 0.0F, -0.3490658503988659F);
+        this.wingstubright = new ModelRenderer(this, 0, 0);
+        this.wingstubright.setRotationPoint(-2.0F, 2.0F, 2.0F);
+        this.wingstubright.addBox(0.0F, 0.0F, 0.0F, 1, 1, 1, 0.0F);
+        this.Wing_Filmsub1_1 = new ModelRenderer(this, 0, 0);
+        this.Wing_Filmsub1_1.setRotationPoint(0.0F, 3.0F, 0.0F);
+        this.Wing_Filmsub1_1.addBox(0.0F, 0.0F, 0.0F, 10, 2, 1, 0.0F);
+        this.thoraxsub3 = new ModelRenderer(this, 0, 0);
+        this.thoraxsub3.setRotationPoint(1.0F, 1.0F, -1.0F);
+        this.thoraxsub3.addBox(0.0F, 0.0F, 0.0F, 3, 3, 1, 0.0F);
+        this.BSsub1 = new ModelRenderer(this, 0, 0);
+        this.BSsub1.setRotationPoint(-0.5F, 2.0F, -0.5F);
+        this.BSsub1.addBox(0.0F, 0.0F, 0.0F, 3, 1, 3, 0.0F);
+        this.Head = new ModelRenderer(this, 0, 0);
+        this.Head.setRotationPoint(-1.0F, 0.2F, 4.3F);
+        this.Head.addBox(0.0F, 0.0F, 0.0F, 3, 6, 2, 0.0F);
+        this.setRotateAngle(Head, -1.0471975511965976F, 0.0F, 0.0F);
+        this.BSsub3 = new ModelRenderer(this, 0, 0);
+        this.BSsub3.setRotationPoint(-0.5F, 9.0F, -0.5F);
+        this.BSsub3.addBox(0.0F, 0.0F, 0.0F, 3, 1, 2, 0.0F);
+        this.MiddleEye = new ModelRenderer(this, 0, 0);
+        this.MiddleEye.setRotationPoint(1.0F, 1.0F, 2.0F);
+        this.MiddleEye.addBox(0.0F, 0.0F, 0.0F, 1, 1, 1, 0.0F);
+        this.setRotateAngle(MiddleEye, -0.7853981633974483F, 0.0F, 0.0F);
+        this.headchin = new ModelRenderer(this, 0, 0);
+        this.headchin.setRotationPoint(0.5F, -1.0F, 0.5F);
+        this.headchin.addBox(0.0F, 0.0F, 0.0F, 2, 1, 1, 0.0F);
+        this.Thorax = new ModelRenderer(this, 0, 0);
+        this.Thorax.setRotationPoint(0.0F, 0.0F, 0.0F);
+        this.Thorax.addBox(0.0F, 0.0F, 0.0F, 5, 5, 5, 0.0F);
+        this.Wing_Frame_Left = new ModelRenderer(this, 0, 0);
+        this.Wing_Frame_Left.setRotationPoint(6.5F, 2.13F, 2.0F);
+        this.Wing_Frame_Left.addBox(0.0F, 0.0F, 0.0F, 20, 1, 2, 0.0F);
+        this.setRotateAngle(Wing_Frame_Left, 0.0F, 0.0F, -0.5235987755982988F);
+        this.BSsub4 = new ModelRenderer(this, 0, 0);
+        this.BSsub4.setRotationPoint(0.5F, 9.0F, 2.0F);
+        this.BSsub4.addBox(0.0F, 0.0F, 0.0F, 1, 7, 1, 0.0F);
+        this.RightRidge = new ModelRenderer(this, 0, 0);
+        this.RightRidge.setRotationPoint(0.0F, 5.0F, 0.0F);
+        this.RightRidge.addBox(0.0F, 0.0F, 0.0F, 2, 2, 2, 0.0F);
+        this.setRotateAngle(RightRidge, 0.0F, 0.0F, 0.4363323129985824F);
+        this.Wing_Film_Right = new ModelRenderer(this, 0, 0);
+        this.Wing_Film_Right.setRotationPoint(-2.0F, 3.0F, 2.75F);
+        this.Wing_Film_Right.addBox(0.0F, 0.0F, 0.0F, 19, 3, 1, 0.0F);
+        this.setRotateAngle(Wing_Film_Right, 0.0F, 3.141592653589793F, 0.5235987755982988F);
+        this.LeftEye = new ModelRenderer(this, 0, 0);
+        this.LeftEye.setRotationPoint(0.25F, 1.5F, 2.0F);
+        this.LeftEye.addBox(0.0F, 0.0F, 0.0F, 1, 1, 1, 0.0F);
+        this.setRotateAngle(LeftEye, -0.7853981633974483F, 0.0F, 0.0F);
+        this.BSsub2 = new ModelRenderer(this, 0, 0);
+        this.BSsub2.setRotationPoint(-1.0F, 3.0F, -0.75F);
+        this.BSsub2.addBox(0.0F, 0.0F, 0.0F, 4, 6, 4, 0.0F);
+        this.Basalspike = new ModelRenderer(this, 0, 0);
+        this.Basalspike.setRotationPoint(1.5F, 8.5F, 1.5F);
+        this.Basalspike.addBox(0.0F, 0.0F, 0.0F, 2, 2, 2, 0.0F);
+        this.setRotateAngle(Basalspike, -0.8726646259971648F, 0.0F, 0.0F);
+        this.thoraxsub1 = new ModelRenderer(this, 0, 0);
+        this.thoraxsub1.setRotationPoint(-1.0F, 1.0F, 1.0F);
+        this.thoraxsub1.addBox(0.0F, 0.0F, 0.0F, 1, 3, 3, 0.0F);
+        this.thoraxsub2 = new ModelRenderer(this, 0, 0);
+        this.thoraxsub2.setRotationPoint(5.0F, 1.0F, 1.0F);
+        this.thoraxsub2.addBox(0.0F, 0.0F, 0.0F, 1, 3, 3, 0.0F);
+        this.Wing_Frame_Right = new ModelRenderer(this, 0, 0);
+        this.Wing_Frame_Right.setRotationPoint(-2.0F, 3.0F, 2.0F);
+        this.Wing_Frame_Right.addBox(0.0F, 0.0F, 0.0F, 20, 1, 2, 0.0F);
+        this.setRotateAngle(Wing_Frame_Right, 0.0F, 0.0F, 3.6651914291880923F);
+        this.Neck = new ModelRenderer(this, 0, 0);
+        this.Neck.setRotationPoint(2.0F, 0.0F, 3.0F);
+        this.Neck.addBox(0.0F, 0.0F, 0.0F, 1, 3, 1, 0.0F);
+        this.setRotateAngle(Neck, -2.96705972839036F, 0.0F, -0.003490658503988659F);
+        this.Thorax.addChild(this.thoraxsub4);
+        this.Wing_Film_Left.addChild(this.Wing_Filmsub1);
+        this.Thorax.addChild(this.thoraxsub6);
+        this.Thorax.addChild(this.thoraxsub5);
+        this.Head.addChild(this.RightEye);
+        this.Thorax.addChild(this.wingstubleft);
+        this.Head.addChild(this.LeftRidge);
+        this.Thorax.addChild(this.wingstubright);
+        this.Wing_Film_Right.addChild(this.Wing_Filmsub1_1);
+        this.Thorax.addChild(this.thoraxsub3);
+        this.Basalspike.addChild(this.BSsub1);
+        this.Neck.addChild(this.Head);
+        this.Basalspike.addChild(this.BSsub3);
+        this.Head.addChild(this.MiddleEye);
+        this.Head.addChild(this.headchin);
+        this.Basalspike.addChild(this.BSsub4);
+        this.Head.addChild(this.RightRidge);
+        this.Head.addChild(this.LeftEye);
+        this.Basalspike.addChild(this.BSsub2);
+        this.Thorax.addChild(this.thoraxsub1);
+        this.Thorax.addChild(this.thoraxsub2);
+    }
+
+    @Override
+    public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) { 
+        GlStateManager.pushMatrix();
+        GlStateManager.translate(this.Wing_Film_Left.offsetX, this.Wing_Film_Left.offsetY, this.Wing_Film_Left.offsetZ);
+        GlStateManager.translate(this.Wing_Film_Left.rotationPointX * f5, this.Wing_Film_Left.rotationPointY * f5, this.Wing_Film_Left.rotationPointZ * f5);
+        GlStateManager.scale(1.0D, 1.0D, 0.5D);
+        GlStateManager.translate(-this.Wing_Film_Left.offsetX, -this.Wing_Film_Left.offsetY, -this.Wing_Film_Left.offsetZ);
+        GlStateManager.translate(-this.Wing_Film_Left.rotationPointX * f5, -this.Wing_Film_Left.rotationPointY * f5, -this.Wing_Film_Left.rotationPointZ * f5);
+        GlStateManager.enableBlend();
+        GlStateManager.blendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
+        GlStateManager.color(1.0F, 1.0F, 1.0F, 0.2F);
+        this.Wing_Film_Left.render(f5);
+        GlStateManager.disableBlend();
+        GlStateManager.popMatrix();
+        this.Thorax.render(f5);
+        GlStateManager.pushMatrix();
+        GlStateManager.translate(this.Wing_Frame_Left.offsetX, this.Wing_Frame_Left.offsetY, this.Wing_Frame_Left.offsetZ);
+        GlStateManager.translate(this.Wing_Frame_Left.rotationPointX * f5, this.Wing_Frame_Left.rotationPointY * f5, this.Wing_Frame_Left.rotationPointZ * f5);
+        GlStateManager.scale(1.0D, 1.0D, 0.5D);
+        GlStateManager.translate(-this.Wing_Frame_Left.offsetX, -this.Wing_Frame_Left.offsetY, -this.Wing_Frame_Left.offsetZ);
+        GlStateManager.translate(-this.Wing_Frame_Left.rotationPointX * f5, -this.Wing_Frame_Left.rotationPointY * f5, -this.Wing_Frame_Left.rotationPointZ * f5);
+        this.Wing_Frame_Left.render(f5);
+        GlStateManager.popMatrix();
+        GlStateManager.pushMatrix();
+        GlStateManager.translate(this.Wing_Film_Right.offsetX, this.Wing_Film_Right.offsetY, this.Wing_Film_Right.offsetZ);
+        GlStateManager.translate(this.Wing_Film_Right.rotationPointX * f5, this.Wing_Film_Right.rotationPointY * f5, this.Wing_Film_Right.rotationPointZ * f5);
+        GlStateManager.scale(1.0D, 1.0D, 0.5D);
+        GlStateManager.translate(-this.Wing_Film_Right.offsetX, -this.Wing_Film_Right.offsetY, -this.Wing_Film_Right.offsetZ);
+        GlStateManager.translate(-this.Wing_Film_Right.rotationPointX * f5, -this.Wing_Film_Right.rotationPointY * f5, -this.Wing_Film_Right.rotationPointZ * f5);
+        GlStateManager.enableBlend();
+        GlStateManager.blendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
+        GlStateManager.color(1.0F, 1.0F, 1.0F, 0.2F);
+        this.Wing_Film_Right.render(f5);
+        GlStateManager.disableBlend();
+        GlStateManager.popMatrix();
+        this.Basalspike.render(f5);
+        GlStateManager.pushMatrix();
+        GlStateManager.translate(this.Wing_Frame_Right.offsetX, this.Wing_Frame_Right.offsetY, this.Wing_Frame_Right.offsetZ);
+        GlStateManager.translate(this.Wing_Frame_Right.rotationPointX * f5, this.Wing_Frame_Right.rotationPointY * f5, this.Wing_Frame_Right.rotationPointZ * f5);
+        GlStateManager.scale(1.0D, 1.0D, 0.5D);
+        GlStateManager.translate(-this.Wing_Frame_Right.offsetX, -this.Wing_Frame_Right.offsetY, -this.Wing_Frame_Right.offsetZ);
+        GlStateManager.translate(-this.Wing_Frame_Right.rotationPointX * f5, -this.Wing_Frame_Right.rotationPointY * f5, -this.Wing_Frame_Right.rotationPointZ * f5);
+        this.Wing_Frame_Right.render(f5);
+        GlStateManager.popMatrix();
+        this.Neck.render(f5);
+    }
+
+    /**
+     * This is a helper function from Tabula to set the rotation of model parts
+     */
+    public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
+        modelRenderer.rotateAngleX = x;
+        modelRenderer.rotateAngleY = y;
+        modelRenderer.rotateAngleZ = z;
+    }
+}

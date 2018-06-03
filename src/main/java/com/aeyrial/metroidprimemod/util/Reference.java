@@ -10,5 +10,6 @@ public class Reference {
 	public static final String COMMON_PROXY_CLASS = "com.aeyrial.metroidprimemod.proxy.CommonProxy";
 	
 	public static final int ENTITY_ZOOMER = 121;
-	public static final int ENTITY_ZOOMER_CONCEPT = 122; 
+	public static final int ENTITY_ZOOMER_CONCEPT = 122;
+	public static final int ENTITY_WAR_WASP = 123;
 }

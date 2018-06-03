@@ -25,5 +25,11 @@
         "category": "entity",
         "subtitle": "entity.zoomer.attack",
         "sounds": [{ "name": "mpm:entity/zoomer/attack", "stream": true}]
+    },
+    "ambience.tallon_overworld_main_theme":
+    {
+        "category": "ambience",
+        "subtitle": "ambience.tallon_overworld_main_theme",
+        "sounds": [{ "name": "mpm:ambience/tallon_overworld_main_theme", "stream": true}]
     }
 }

@@ -29,6 +29,7 @@ import net.minecraft.world.World;
 
 public class EntityAISpikeyTouch extends EntityAIBase
 {
+	
 	 World world;
 	    protected EntityCreature attacker;
 	    /** An amount of decrementing ticks that allows the entity to attack once the tick reaches 0. */
@@ -46,14 +47,16 @@ public class EntityAISpikeyTouch extends EntityAIBase
 	    protected final int attackInterval = 20;
 	    private int failedPathFindingPenalty = 0;
 	    private boolean canPenalize = false;
+	    private SoundEvent ATTACK_EVENT;
 	    
-	    public EntityAISpikeyTouch(EntityCreature creature, double speedIn, boolean useLongMemory)
+	    public EntityAISpikeyTouch(EntityCreature creature, double speedIn, boolean useLongMemory, SoundEvent ENTITY_ZOOMER_ATTACK)
 	    {
 	        this.attacker = creature;
 	        this.world = creature.world;
 	        this.longMemory = useLongMemory;
 	        this.speedTowardsTarget = speedIn;
 	        this.setMutexBits(8); // Allows this to run parallel to movement
+	        this.ATTACK_EVENT = ENTITY_ZOOMER_ATTACK;
 	    }
 	    
 	    /**
@@ -260,16 +263,23 @@ public class EntityAISpikeyTouch extends EntityAIBase
 	        }
 	    }*/
 	    
+
+	    
 	    protected void checkAndPerformAttack(EntityLivingBase p_190102_1_, double p_190102_2_)
 	    {
-	        double d0 = this.getAttackReachSqr(p_190102_1_);
+	        //SoundEvent SOME_EVENT = ENTITY_ZOOMER_ATTACK;
+	        
+	    	double d0 = this.getAttackReachSqr(p_190102_1_);
 
 	        if (this.attackTick <= 0 && d0 != -1.0 && p_190102_2_ <= d0)
 	        {
 	            this.attackTick = 1;
 	            this.attacker.swingArm(EnumHand.MAIN_HAND);
 	            this.attacker.attackEntityAsMob(p_190102_1_);
+	            
+	            this.attacker.playSound(ATTACK_EVENT, 0.15F, 1.0F);
 	        }
+	        //ENTITY_ZOOMER_ATTACK = registerSound("entity.zoomer.attack");
 	    }
 
 		protected double getAttackReachSqr(EntityLivingBase attackTarget)
