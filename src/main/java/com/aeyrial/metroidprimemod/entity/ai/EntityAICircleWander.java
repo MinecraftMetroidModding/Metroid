@@ -8,6 +8,7 @@ import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.ai.EntityAIBase;
 import net.minecraft.entity.ai.RandomPositionGenerator;
 import net.minecraft.util.math.Vec3d;
+import scala.Console;
 
 public class EntityAICircleWander extends EntityAIBase
 {
@@ -38,6 +39,8 @@ public class EntityAICircleWander extends EntityAIBase
     public EntityAICircleWander(EntityCreature creatureIn, double speedIn)
     {
         this(creatureIn, speedIn, 120);
+		System.out.println("It's time to Zoom! (er)");
+		Console.out().print("It's time to Zoom! (er)");
     }
 
     public EntityAICircleWander(EntityCreature creatureIn, double speedIn, int chance)
@@ -46,6 +49,8 @@ public class EntityAICircleWander extends EntityAIBase
         this.speed = speedIn;
         this.executionChance = chance;
         this.setMutexBits(1);
+		System.out.println("It's time to Zoom! (er)");
+		Console.out().print("It's time to Zoom! (er)");
     }
 
     /**
