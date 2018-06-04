@@ -1,53 +1,51 @@
 package com.aeyrial.metroidprimemod.util.handlers;
+import com.aeyrial.metroidprimemod.util.handlers.SoundsHandler;
 
+import net.minecraft.block.Block;
 import net.minecraft.client.multiplayer.WorldClient;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
+import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import scala.Console;
 
 
+
+
 public class MPMEventHandler
-{	
-	//@SubscribeEvent
-	//public void
+{
+	Biome currentBiome = null;
+	Biome previousBiome = null;
+	
 	@SubscribeEvent
-	public void onMove(TickEvent.PlayerTickEvent event, SoundEvent Music) {
+	public void onMove(TickEvent.PlayerTickEvent event) {
 		
-//		event.player.getEntityWorld().getBiome(event.player.getPosition()) == Biome.getBiome(0)
+		int reductionFactor = 30;
+		int checkIterator = 0;
 		
-		if(event.player.getEntityWorld().getBiome(event.player.getPosition()) == Biome.getBiome(0))
+
+		currentBiome = event.player.getEntityWorld().getBiome(event.player.getPosition());
+		if(currentBiome == Biome.getBiome(0)&&(currentBiome!=previousBiome)&&(checkIterator > reductionFactor))
 		{
-		
-			//System.out.println(event.player.getEntityWorld().getBiome(event.player.getPosition()) == Biome.getBiome(0));
-			System.out.println("Did the music play?");
 			
-			//TO DO: Implement the following concept
-//				if (i > someValue){
-//					playSound
-//				}
-//			// Change onMove Vars and function call to allow the sound input (soundEvent Music)
+			// stop current music
+			event.player.world.playSound(event.player, event.player.getPosition(), SoundsHandler.AMBIENCE_TALLON_OVERWORLD_MAIN_THEME, SoundCategory.MUSIC, 0.5F, 1.0F);
 			
-			
+			System.out.println("Is the music playing?");
+
 		}
-		
-//		event.
-		
-//		World.class.GetBiomeGenForCoords(event.player.getPosition().getX(),event.player.getPosition().getZ());
-		
-		
-		//EntityPlayer player = Minecraft.getMinecraft().player;
-		
-		//event.PlayerTickEvent(TickEvent.Phase.START, player);
-		
-		
-		
-		//System.out.println("Player Tick Event");
-		//Console.out().print("Player Tick Event");
+		if((currentBiome!=previousBiome))
+		{
+			previousBiome = currentBiome;
+			currentBiome = null;
+		}
+		checkIterator++;
 	}
 	
 	
