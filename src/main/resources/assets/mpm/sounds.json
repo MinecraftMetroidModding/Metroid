@@ -3,33 +3,140 @@
     {
         "category": "entity",
         "subtitle": "entity.zoomer.ambient",
-        "sounds": [{ "name": "mpm:entity/zoomer/ambient", "stream": true}]
+        "sounds": [{ "name": "mpm:entity/zoomer/ambient", "stream": false}]
     },
     
     "entity.zoomer.hurt":
     {
         "category": "entity",
         "subtitle": "entity.zoomer.hurt",
-        "sounds": [{ "name": "mpm:entity/zoomer/hurt", "stream": true}]
+        "sounds": [{ "name": "mpm:entity/zoomer/hurt", "stream": false}]
     },
     
     "entity.zoomer.death":
     {
         "category": "entity",
         "subtitle": "entity.zoomer.death",
-        "sounds": [{ "name": "mpm:entity/zoomer/death", "stream": true}]
+        "sounds": [{ "name": "mpm:entity/zoomer/death", "stream": false}]
     },
     
     "entity.zoomer.attack":
     {
         "category": "entity",
         "subtitle": "entity.zoomer.attack",
-        "sounds": [{ "name": "mpm:entity/zoomer/attack", "stream": true}]
+        "sounds": [{ "name": "mpm:entity/zoomer/attack", "stream": false}]
+    },
+    "ambience.tallon_overworld":
+    {
+        "category": "ambience",
+        "type": "sound",
+        "subtitle": "ambience.tallon_overworld",
+        "sounds": [{ "name": "mpm:ambience/tallon_overworld_main_theme", "stream": true},
+                   { "name": "mpm:ambience/tallon_overworld_depths", "stream": true}]
+                           
     },
     "ambience.tallon_overworld_main_theme":
     {
         "category": "ambience",
+        "type": "sound",
         "subtitle": "ambience.tallon_overworld_main_theme",
         "sounds": [{ "name": "mpm:ambience/tallon_overworld_main_theme", "stream": true}]
+                           
+    },
+    "ambience.sunken_frigate":
+    {
+        "category": "ambience",
+        "type": "sound",
+        "subtitle": "ambience.sunken_frigate",
+        "sounds": [{ "name": "mpm:ambience/sunken_frigate_main_theme", "stream": true},
+                   { "name": "mpm:ambience/sunken_frigate_ambience", "stream": true}]
+    },
+    "ambience.sunken_frigate_main_theme":
+    {
+        "category": "ambience",
+        "type": "sound",
+        "subtitle": "ambience.sunken_frigate_main_theme",
+        "sounds": [{ "name": "mpm:ambience/sunken_frigate_main_theme", "stream": true}]
+    },
+    "ambience.phendrana_drifts":
+    {
+        "category": "ambience",
+        "type": "sound",
+        "subtitle": "ambience.phendrana_drifts",
+        "sounds": [{ "name": "mpm:ambience/phendrana_drifts_puzzle_theme", "stream": true},
+                   { "name": "mpm:ambience/phendrana_drifts_main_theme", "stream": true},
+                   { "name": "mpm:ambience/phendrana_drifts_depths", "stream": true},
+                   { "name": "mpm:ambience/phendrana_drifts_chozo_temple", "stream": true},
+                   { "name": "mpm:ambience/phendrana_drifts_chozo_temple", "stream": true}]
+    },
+    "ambience.phendrana_drifts_main_theme":
+    {
+        "category": "ambience",
+        "type": "sound",
+        "subtitle": "ambience.phendrana_drifts_main_theme",
+        "sounds": [{ "name": "mpm:ambience/phendrana_drifts_main_theme", "stream": true}]
+    },
+    "ambience.phazon_mines":
+    {
+        "category": "ambience",
+        "type": "sound",
+        "subtitle": "ambience.phazon_mines",
+        "sounds": [{ "name": "mpm:ambience/phazon_mines_main_theme", "stream": true},
+                   { "name": "mpm:ambience/phazon_mines_ambience", "stream": true}]
+    },
+    "ambience.phazon_mines_main_theme":
+    {
+        "category": "ambience",
+        "type": "sound",
+        "subtitle": "ambience.phazon_mines_main_theme",
+        "sounds": [{ "name": "mpm:ambience/phazon_mines_main_theme", "stream": true}]
+    },
+    "ambience.chozo_ruins":
+    {
+        "category": "ambience",
+        "type": "sound",
+        "subtitle": "ambience.chozo_ruins",
+        "sounds": [{ "name": "mpm:ambience/chozo_temple_finale_theme", "stream": true},
+                   { "name": "mpm:ambience/chozo_ruins_temple", "stream": true},
+                   { "name": "mpm:ambience/chozo_ruins_plaza", "stream": true},
+                   { "name": "mpm:ambience/chozo_ruins_main_theme", "stream": true},
+                   { "name": "mpm:ambience/chozo_ruins_entrance", "stream": true},
+                   { "name": "mpm:ambience/chozo_ruins_depths", "stream": true},
+                   { "name": "mpm:ambience/chozo_ruins_artifact_temple", "stream": true}]
+    },
+    "ambience.chozo_ruins_main_theme":
+    {
+        "category": "ambience",
+        "type": "sound",
+        "subtitle": "ambience.chozo_ruins_main_theme",
+        "sounds": [{ "name": "mpm:ambience/chozo_ruins_main_theme", "stream": true}]
+    },
+        "ambience.silence1":
+    {
+        "category": "ambience",
+        "type": "sound",
+        "subtitle": "ambience.silence1",
+        "sounds": [{ "name": "mpm:ambience/silence1", "stream": true}]
+    },
+        "ambience.silence2":
+    {
+        "category": "ambience",
+        "type": "sound",
+        "subtitle": "ambience.silence2",
+        "sounds": [{ "name": "mpm:ambience/silence2", "stream": true}]
+    },
+        "ambience.silence3":
+    {
+        "category": "ambience",
+        "type": "sound",
+        "subtitle": "ambience.silence3",
+        "sounds": [{ "name": "mpm:ambience/silence3", "stream": true}]
+    },
+        "ambience.silence4":
+    {
+        "category": "ambience",
+        "type": "sound",
+        "subtitle": "ambience.silence4",
+        "sounds": [{ "name": "mpm:ambience/silence4", "stream": true}]
     }
 }
