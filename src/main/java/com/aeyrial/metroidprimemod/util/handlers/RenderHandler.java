@@ -1,8 +1,10 @@
 package com.aeyrial.metroidprimemod.util.handlers;
 
+import com.aeyrial.metroidprimemod.entity.EntitySeedling;
 import com.aeyrial.metroidprimemod.entity.EntityWarWasp;
 import com.aeyrial.metroidprimemod.entity.EntityZoomer;
 import com.aeyrial.metroidprimemod.entity.EntityZoomerConcept;
+import com.aeyrial.metroidprimemod.entity.render.RenderSeedling;
 import com.aeyrial.metroidprimemod.entity.render.RenderWarWasp;
 import com.aeyrial.metroidprimemod.entity.render.RenderZoomer;
 import com.aeyrial.metroidprimemod.entity.render.RenderZoomerConcept;
@@ -43,6 +45,15 @@ public class RenderHandler
 				return new RenderWarWasp(manager);
 			}
 		});
+		RenderingRegistry.registerEntityRenderingHandler(EntitySeedling.class, new IRenderFactory<EntitySeedling>()
+		{
+			@Override
+			public Render<? super EntitySeedling> createRenderFor(RenderManager manager)
+			{
+				return new RenderSeedling(manager);
+			}
+		});
+		
 	}
 	
 	

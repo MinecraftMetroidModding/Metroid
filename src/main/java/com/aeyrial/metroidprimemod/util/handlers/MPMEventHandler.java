@@ -35,135 +35,82 @@ import net.minecraftforge.fml.common.eventhandler.Event;
 public class MPMEventHandler 
 {
 	Biome currentBiome = null;
-	Biome previousBiome = null;
+//	Biome previousBiome = null;
 	
-	int counter = 120001;
+	int counter = 0;
 	
 	@SubscribeEvent
 	public void onMove(TickEvent.PlayerTickEvent event) {
 		
 
 
-		currentBiome = event.player.getEntityWorld().getBiome(event.player.getPosition());
+		
 		
 		//Event event2 = ForgeEventFactory.onPlaySoundAtEntity(event.player, SoundsHandler.AMBIENCE_TALLON_OVERWORLD_MAIN_THEME, SoundCategory.MUSIC, Float.MAX_VALUE, 1.0F);
+    	//PlaySoundAtEntityEvent event2 = new PlaySoundAtEntityEvent(event.player, SoundsHandler.AMBIENCE_TALLON_OVERWORLD_MAIN_THEME, SoundCategory.MUSIC, Float.MAX_VALUE, 1.0F);
 		
 		
-//		onPlaySoundAtEntity(event.player, SoundsHandler.AMBIENCE_TALLON_OVERWORLD_MAIN_THEME, SoundCategory.MUSIC, Float.MAX_VALUE, 1.0F);
-//		System.out.println("Is the Tallon Main Theme music playing?");
 		
-		if(counter > 12000) {
+		if(counter <= 0) { 
+			currentBiome = event.player.getEntityWorld().getBiome(event.player.getPosition());
 			
-//			for(int j = 0; j < 3; j++) {
-//				event.player.world.playSound(event.player, event.player.getPosition(), SoundsHandler.SILENCE1, SoundCategory.MUSIC, Float.MAX_VALUE, 1.0F);
-//				System.out.println("Silence1");
-//				event.player.world.playSound(event.player, event.player.getPosition(), SoundsHandler.SILENCE2, SoundCategory.MUSIC, Float.MAX_VALUE, 1.0F);
-//				System.out.println("Silence2");
-//				event.player.world.playSound(event.player, event.player.getPosition(), SoundsHandler.SILENCE3, SoundCategory.MUSIC, Float.MAX_VALUE, 1.0F);
-//				System.out.println("Silence3");
-//				event.player.world.playSound(event.player, event.player.getPosition(), SoundsHandler.SILENCE4, SoundCategory.MUSIC, Float.MAX_VALUE, 1.0F);
-//				System.out.println("Silence4");
-//				
-//				counter = 0;
-//			}
-		
-			if(currentBiome!=previousBiome) {
-				
-	//			event.player.world.playSound(event.player, event.player.getPosition(), SoundsHandler.SILENCE1, SoundCategory.MUSIC, Float.MAX_VALUE, 1.0F);
-	//			System.out.println("Silence1");
-	//			event.player.world.playSound(event.player, event.player.getPosition(), SoundsHandler.SILENCE2, SoundCategory.MUSIC, Float.MAX_VALUE, 1.0F);
-	//			System.out.println("Silence2");
-	//			event.player.world.playSound(event.player, event.player.getPosition(), SoundsHandler.SILENCE3, SoundCategory.MUSIC, Float.MAX_VALUE, 1.0F);
-	//			System.out.println("Silence3");
-	//			event.player.world.playSound(event.player, event.player.getPosition(), SoundsHandler.SILENCE4, SoundCategory.MUSIC, Float.MAX_VALUE, 1.0F);
-	//			System.out.println("Silence4");
-				
-	
-	
-	//	    		event.player.world.playSound(event.player, event.player.getPosition(), SoundsHandler.SILENCE4, SoundCategory.MUSIC, 0.0F, 1.0F);
-	//	    		System.out.println("Silence4");
-				
-				//Two playing options:
-				//event.player.getEntityWorld().playSound(event.player, event.player.getPosition(), SoundsHandler.AMBIENCE_SUNKEN_FRIGATE_MAIN_THEME, SoundCategory.MUSIC, 0.0F, 1.0F);
-				//event.player.world.playSound(event.player, event.player.getPosition(), SoundsHandler.AMBIENCE_TALLON_OVERWORLD_MAIN_THEME, SoundCategory.MUSIC, 0.0F, 1.0F);
-				
-				/* Tallon Overworld Music */
-				if((currentBiome == Biome.getBiome(3))  || (currentBiome == Biome.getBiome(4))   ||(currentBiome == Biome.getBiome(5))   || (currentBiome == Biome.getBiome(7))
-				 ||(currentBiome == Biome.getBiome(21)) || (currentBiome == Biome.getBiome(23))  ||(currentBiome == Biome.getBiome(27))  || (currentBiome == Biome.getBiome(29))
-				 ||(currentBiome == Biome.getBiome(32)) || (currentBiome == Biome.getBiome(132)) ||(currentBiome == Biome.getBiome(133)) || (currentBiome == Biome.getBiome(149))
-				 ||(currentBiome == Biome.getBiome(151))|| (currentBiome == Biome.getBiome(155)) ||(currentBiome == Biome.getBiome(157)) || (currentBiome == Biome.getBiome(160))
-				 ||(currentBiome == Biome.getBiome(164))|| (currentBiome == Biome.getBiome(167))&&((currentBiome!=previousBiome)))
-				{
-			    	//PlaySoundAtEntityEvent event2 = new PlaySoundAtEntityEvent(event.player, SoundsHandler.AMBIENCE_TALLON_OVERWORLD_MAIN_THEME, SoundCategory.MUSIC, Float.MAX_VALUE, 1.0F);
-	
-			    	//PlaySoundAtEntityEvent(event.player, SoundsHandler.AMBIENCE_TALLON_OVERWORLD_MAIN_THEME, SoundCategory.MUSIC, Float.MAX_VALUE, 1.0F);
-					
-			    	for(int j =0; j < 9; j++)
-			    	{
-			    		event.player.getEntityWorld().playSound(event.player, event.player.getPosition(), SoundsHandler.AMBIENCE_TALLON_OVERWORLD_MAIN_THEME, SoundCategory.MUSIC, -Float.MAX_VALUE, 1.0F);
-			    		
-			    	}
-			    	
-			    	
-			    	event.player.getEntityWorld().playSound(event.player, event.player.getPosition(), SoundsHandler.AMBIENCE_TALLON_OVERWORLD_MAIN_THEME, SoundCategory.MUSIC, Float.MAX_VALUE, 1.0F);
-			    	System.out.println("Tallon Overworld");
-				}
-				/* Phendrana Drifts Music */
-				else if((currentBiome == Biome.getBiome(10)) || (currentBiome == Biome.getBiome(11)) ||(currentBiome == Biome.getBiome(12))  ||(currentBiome == Biome.getBiome(30))
-				 ||(currentBiome == Biome.getBiome(34)) || (currentBiome == Biome.getBiome(140))||(currentBiome == Biome.getBiome(158))&&((currentBiome!=previousBiome)))
-				{
-			    	for(int j =0; j < 9; j++)
-			    	{
-			    		event.player.getEntityWorld().playSound(event.player, event.player.getPosition(), SoundsHandler.AMBIENCE_PHENDRANA_DRIFTS_MAIN_THEME, SoundCategory.MUSIC, -Float.MAX_VALUE, 1.0F);
-			    		
-			    	}
-					event.player.getEntityWorld().playSound(event.player, event.player.getPosition(), SoundsHandler.AMBIENCE_PHENDRANA_DRIFTS_MAIN_THEME, SoundCategory.MUSIC, Float.MAX_VALUE, 1.0F);
-					System.out.println("Phendrana Drifts");
-				}
-				
-				/* Chozo Ruins Music */
-				else if((currentBiome == Biome.getBiome(2))  || (currentBiome == Biome.getBiome(35)) ||(currentBiome == Biome.getBiome(36))  ||(currentBiome == Biome.getBiome(37))
-					  ||(currentBiome == Biome.getBiome(38)) || (currentBiome == Biome.getBiome(39)) ||(currentBiome == Biome.getBiome(130)) ||(currentBiome == Biome.getBiome(163))
-				      ||(currentBiome == Biome.getBiome(165))|| (currentBiome == Biome.getBiome(166))&&((currentBiome!=previousBiome)))
-				{
-			    	for(int j =0; j < 9; j++)
-			    	{
-			    		event.player.getEntityWorld().playSound(event.player, event.player.getPosition(), SoundsHandler.AMBIENCE_CHOZO_RUINS_MAIN_THEME, SoundCategory.MUSIC, -Float.MAX_VALUE, 1.0F);
-			    		
-			    	}
-			    	event.player.getEntityWorld().playSound(event.player, event.player.getPosition(), SoundsHandler.AMBIENCE_CHOZO_RUINS_MAIN_THEME, SoundCategory.MUSIC, Float.MAX_VALUE, 1.0F);
-					System.out.println("Chozo Ruins");
-				}
-				/* Phazon Mines Music */
-				else if((currentBiome == Biome.getBiome(14)) || (currentBiome == Biome.getBiome(15)) ||(currentBiome == Biome.getBiome(131)) ||(currentBiome == Biome.getBiome(162))
-						 &&((currentBiome!=previousBiome)))
-				{
-					for(int j =0; j < 9; j++)
-			    	{
-			    		event.player.getEntityWorld().playSound(event.player, event.player.getPosition(), SoundsHandler.AMBIENCE_PHAZON_MINES_MAIN_THEME, SoundCategory.MUSIC, -Float.MAX_VALUE, 1.0F);
-			    		
-			    	}
-					event.player.getEntityWorld().playSound(event.player, event.player.getPosition(), SoundsHandler.AMBIENCE_PHAZON_MINES_MAIN_THEME, SoundCategory.MUSIC, Float.MAX_VALUE, 1.0F);
-					System.out.println("Phazon Mines");
-				}
-				/* Underwater Music */
-				else if((currentBiome == Biome.getBiome(0))  || (currentBiome == Biome.getBiome(6))  ||(currentBiome == Biome.getBiome(16))  ||(currentBiome == Biome.getBiome(24))
-					  ||(currentBiome == Biome.getBiome(25)) || (currentBiome == Biome.getBiome(26)) ||(currentBiome == Biome.getBiome(134))&&((currentBiome!=previousBiome)))
-				{
-					for(int j =0; j < 9; j++)
-			    	{
-			    		event.player.getEntityWorld().playSound(event.player, event.player.getPosition(), SoundsHandler.AMBIENCE_SUNKEN_FRIGATE_MAIN_THEME, SoundCategory.MUSIC, -Float.MAX_VALUE, 1.0F);
-			    	}
-					event.player.getEntityWorld().playSound(event.player, event.player.getPosition(), SoundsHandler.AMBIENCE_SUNKEN_FRIGATE_MAIN_THEME, SoundCategory.MUSIC, Float.MAX_VALUE, 1.0F);
-					System.out.println("Sunken Frigate");
-				}
-	
-					previousBiome = currentBiome;
-					currentBiome = null;
-					counter = 0;
+			//Two playing options:
+			//event.player.getEntityWorld().playSound(event.player, event.player.getPosition(), SoundsHandler.AMBIENCE_SUNKEN_FRIGATE_MAIN_THEME, SoundCategory.MUSIC, 0.0F, 1.0F);
+			//event.player.world.playSound(event.player, event.player.getPosition(), SoundsHandler.AMBIENCE_TALLON_OVERWORLD_MAIN_THEME, SoundCategory.MUSIC, 0.0F, 1.0F);
+			
+			/* Tallon Overworld Music */
+			if((currentBiome == Biome.getBiome(3))  || (currentBiome == Biome.getBiome(4))   ||(currentBiome == Biome.getBiome(5))   || (currentBiome == Biome.getBiome(7))
+			 ||(currentBiome == Biome.getBiome(21)) || (currentBiome == Biome.getBiome(23))  ||(currentBiome == Biome.getBiome(27))  || (currentBiome == Biome.getBiome(29))
+			 ||(currentBiome == Biome.getBiome(32)) || (currentBiome == Biome.getBiome(132)) ||(currentBiome == Biome.getBiome(133)) || (currentBiome == Biome.getBiome(149))
+			 ||(currentBiome == Biome.getBiome(151))|| (currentBiome == Biome.getBiome(155)) ||(currentBiome == Biome.getBiome(157)) || (currentBiome == Biome.getBiome(160))
+			 ||(currentBiome == Biome.getBiome(164))|| (currentBiome == Biome.getBiome(167)))
+			{
+		    	event.player.getEntityWorld().playSound(event.player, event.player.getPosition(), SoundsHandler.AMBIENCE_TALLON_OVERWORLD_MAIN_THEME, SoundCategory.MUSIC, Float.MAX_VALUE, 1.0F);
+		    	System.out.println("Tallon Overworld");
+		    	counter = ((8*60)+24+5)*20;
+		    	
 			}
-			counter++;
+			/* Phendrana Drifts Music */
+			else if((currentBiome == Biome.getBiome(10)) || (currentBiome == Biome.getBiome(11)) ||(currentBiome == Biome.getBiome(12))  ||(currentBiome == Biome.getBiome(30))
+			 ||(currentBiome == Biome.getBiome(34)) || (currentBiome == Biome.getBiome(140))||(currentBiome == Biome.getBiome(158)))
+			{
+
+				event.player.getEntityWorld().playSound(event.player, event.player.getPosition(), SoundsHandler.AMBIENCE_PHENDRANA_DRIFTS_MAIN_THEME, SoundCategory.MUSIC, Float.MAX_VALUE, 1.0F);
+				System.out.println("Phendrana Drifts");
+				counter = ((7*60)+36+5)*20;
+			}
+			
+			/* Chozo Ruins Music */
+			else if((currentBiome == Biome.getBiome(2))  || (currentBiome == Biome.getBiome(35)) ||(currentBiome == Biome.getBiome(36))  ||(currentBiome == Biome.getBiome(37))
+				  ||(currentBiome == Biome.getBiome(38)) || (currentBiome == Biome.getBiome(39)) ||(currentBiome == Biome.getBiome(130)) ||(currentBiome == Biome.getBiome(163))
+			      ||(currentBiome == Biome.getBiome(165))|| (currentBiome == Biome.getBiome(166)))
+			{
+		    	event.player.getEntityWorld().playSound(event.player, event.player.getPosition(), SoundsHandler.AMBIENCE_CHOZO_RUINS, SoundCategory.MUSIC, Float.MAX_VALUE, 1.0F);
+				System.out.println("Chozo Ruins");
+				counter = ((9*60)+41+5)*20;
+			}
+			/* Phazon Mines Music */
+			else if((currentBiome == Biome.getBiome(14)) || (currentBiome == Biome.getBiome(15)) ||(currentBiome == Biome.getBiome(131)) ||(currentBiome == Biome.getBiome(162)))
+			{
+				event.player.getEntityWorld().playSound(event.player, event.player.getPosition(), SoundsHandler.AMBIENCE_PHAZON_MINES, SoundCategory.MUSIC, Float.MAX_VALUE, 1.0F);
+				System.out.println("Phazon Mines");
+				counter = ((2*60)+5)*20;
+			}
+			/* Underwater Music */
+			else if((currentBiome == Biome.getBiome(0))  || (currentBiome == Biome.getBiome(6))  ||(currentBiome == Biome.getBiome(16))  ||(currentBiome == Biome.getBiome(24))
+				  ||(currentBiome == Biome.getBiome(25)) || (currentBiome == Biome.getBiome(26)) ||(currentBiome == Biome.getBiome(134)))
+			{
+				event.player.getEntityWorld().playSound(event.player, event.player.getPosition(), SoundsHandler.AMBIENCE_SUNKEN_FRIGATE, SoundCategory.MUSIC, Float.MAX_VALUE, 1.0F);
+				System.out.println("Sunken Frigate");
+				counter = ((8*60)+21+5)*20;
+			}
+
+//			previousBiome = currentBiome;
+			currentBiome = null;
+
+		
 		}
+		counter--;
 	}
 	
 	
